@@ -10,10 +10,10 @@
                     </div>
 
                     <!-- View Details Button -->
-                    <a :href="`/trainees/${trainee.id}`">View Details</a>
+                    <a :href="`/ViewDetails/${trainee.id}`">View Details</a>
 
                     <!-- Edit Button -->
-                    <a :href="`/trainees/${trainee.id}/edit`" class="btn btn-primary w-25">Edit</a>
+                    <a :href="`/Edit/${trainee.id}/edit`" class="btn btn-primary w-25">Edit</a>
                 </div>
             </li>
         </ul>
@@ -35,9 +35,7 @@ export default {
         async fetchTrainees() {
             try {
                 const response = await apiService.getTrainees();
-                console.log(response)
                 this.trainees = response.data.data.data;
-                console.log(this.trainees)
                 
             } catch (error) {
                 

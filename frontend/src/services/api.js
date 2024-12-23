@@ -7,6 +7,7 @@ const apiClient = axios.create({
     },
 });
 
+// Export the apiClient instance
 export default {
     getTrainees(params = {}) {
         return apiClient.get('/trainees', { params });
@@ -22,7 +23,7 @@ export default {
     },
     deleteTrainee(id) {
         return apiClient.delete(`/trainees/${id}`);
-    },
+    },  
     // getTrainingCenters() {
     //     return apiClient.get('/training-centers');
     // },
